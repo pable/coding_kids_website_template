@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Shrinking ball</title>
+        <link rel="stylesheet" href="../style.css"/>
+        <meta charset="utf-8" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet"> 
+    </head>
+    <body>
+        <div class="app">
+            <div class="title">
+                <h1>Welcome to my website!</h1>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="../projects.html">My projects</a>
+                    </li>
+                    <li>
+                        <a href="#">Things I like</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <h1>Shrinking ball</h1>
+                <div>
+                    <div class="nav">
+                        <ul>
+                            <li>
+                                <a href="#" class="not-link" onclick="openSection('explanation')">Explanation</a>
+                            </li>
+                            <li>
+                                <a href="#" class="not-link" onclick="openSection('code1')">Code in Processing</a>
+                            </li>
+                            <li>
+                                <a href="#" class="not-link" onclick="openSection('code2')">Code in p5.js</a>
+                            </li>
+                            <li>
+                                <a href="#" class="not-link" onclick="openSection('demo')">Demo</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="demo-content">
+                        <div id="explanation" class="section selected">
+                            <p>Here we have a ball that follows your mouse</p>
+                            <p>When you click the mouse, it'll grow until you release the button.</p>
+                            <p>Then it'll shrink.</p>
+                        </div>
+                        <div id="code1" class="section">
+
+<!-- HTML generated using hilite.me --><div style="background: #f0f3f3; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007788; font-weight: bold">int</span> ballSize <span style="color: #555555">=</span> <span style="color: #FF6600">0</span><span style="color: #555555">;</span>
+<span style="color: #007788; font-weight: bold">void</span> <span style="color: #CC00FF">setup</span><span style="color: #555555">(){</span>
+    size<span style="color: #555555">(</span><span style="color: #FF6600">900</span><span style="color: #555555">,</span> <span style="color: #FF6600">600</span><span style="color: #555555">);</span>
+<span style="color: #555555">}</span>
+<span style="color: #007788; font-weight: bold">void</span> <span style="color: #CC00FF">draw</span><span style="color: #555555">(){</span>
+    circle<span style="color: #555555">(</span>mouseX<span style="color: #555555">,</span> mouseY<span style="color: #555555">,</span> ballSize<span style="color: #555555">);</span>
+    <span style="color: #006699; font-weight: bold">if</span><span style="color: #555555">(</span>mousePressed<span style="color: #555555">){</span>
+        ballSize <span style="color: #555555">=</span> ballSize <span style="color: #555555">+</span> <span style="color: #FF6600">1</span><span style="color: #555555">;</span>
+    <span style="color: #555555">}</span>
+    <span style="color: #006699; font-weight: bold">else</span><span style="color: #555555">{</span>
+        <span style="color: #006699; font-weight: bold">if</span><span style="color: #555555">(</span>ballSize<span style="color: #555555">&gt;</span><span style="color: #FF6600">0</span><span style="color: #555555">){</span>
+            ballSize <span style="color: #555555">=</span> ballSize <span style="color: #555555">-</span> <span style="color: #FF6600">1</span><span style="color: #555555">;</span>
+        <span style="color: #555555">}</span>
+    <span style="color: #555555">}</span>
+<span style="color: #555555">}</span>
+</pre></div>
+
+                        </div>
+                        <div id="code2" class="section">
+                            
+                            <!-- HTML generated using hilite.me --><div style="background: #f0f3f3; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #006699; font-weight: bold">let</span> ballSize <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>;
+<span style="color: #006699; font-weight: bold">function</span> setup(){
+    createResponsiveCanvas(<span style="color: #FF6600">900</span>, <span style="color: #FF6600">600</span>);
+}
+
+<span style="color: #006699; font-weight: bold">function</span> draw(){
+    fill(random(<span style="color: #FF6600">0</span>, <span style="color: #FF6600">255</span>), random(<span style="color: #FF6600">0</span>, <span style="color: #FF6600">255</span>), random(<span style="color: #FF6600">0</span>, <span style="color: #FF6600">255</span>));
+    circle(mouseX, mouseY, ballSize);
+    <span style="color: #006699; font-weight: bold">if</span>(mouseIsPressed){
+        ballSize <span style="color: #555555">=</span> ballSize <span style="color: #555555">+</span> <span style="color: #FF6600">1</span>;
+    }
+    <span style="color: #006699; font-weight: bold">else</span>{
+        <span style="color: #006699; font-weight: bold">if</span>(ballSize <span style="color: #555555">&gt;</span> <span style="color: #FF6600">0</span>){
+            ballSize <span style="color: #555555">=</span> ballSize <span style="color: #555555">-</span> <span style="color: #FF6600">1</span>;
+        }
+    }
+}
+                            </pre></div>
+
+                        </div>
+                        <div id="demo" class="section">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="sections.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+        <script src="p5js_utils.js"></script>
+        <script src="shrinking_ball.js"></script>
+    </body>
+</html>
