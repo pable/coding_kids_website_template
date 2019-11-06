@@ -68,22 +68,59 @@
                         </div>
                         <div id="code1" class="section">
 
-<!-- HTML generated using hilite.me --><div style="background: #f0f3f3; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007788; font-weight: bold">int</span> ballSize <span style="color: #555555">=</span> <span style="color: #FF6600">0</span><span style="color: #555555">;</span>
-<span style="color: #007788; font-weight: bold">void</span> <span style="color: #CC00FF">setup</span><span style="color: #555555">(){</span>
-    size<span style="color: #555555">(</span><span style="color: #FF6600">900</span><span style="color: #555555">,</span> <span style="color: #FF6600">600</span><span style="color: #555555">);</span>
-<span style="color: #555555">}</span>
-<span style="color: #007788; font-weight: bold">void</span> <span style="color: #CC00FF">draw</span><span style="color: #555555">(){</span>
-    circle<span style="color: #555555">(</span>mouseX<span style="color: #555555">,</span> mouseY<span style="color: #555555">,</span> ballSize<span style="color: #555555">);</span>
-    <span style="color: #006699; font-weight: bold">if</span><span style="color: #555555">(</span>mousePressed<span style="color: #555555">){</span>
-        ballSize <span style="color: #555555">=</span> ballSize <span style="color: #555555">+</span> <span style="color: #FF6600">1</span><span style="color: #555555">;</span>
-    <span style="color: #555555">}</span>
-    <span style="color: #006699; font-weight: bold">else</span><span style="color: #555555">{</span>
-        <span style="color: #006699; font-weight: bold">if</span><span style="color: #555555">(</span>ballSize<span style="color: #555555">&gt;</span><span style="color: #FF6600">0</span><span style="color: #555555">){</span>
-            ballSize <span style="color: #555555">=</span> ballSize <span style="color: #555555">-</span> <span style="color: #FF6600">1</span><span style="color: #555555">;</span>
-        <span style="color: #555555">}</span>
-    <span style="color: #555555">}</span>
-<span style="color: #555555">}</span>
+<!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">float</span> <span style="color: #f8f8f2">bus</span><span style="color: #f92672">=</span><span style="color: #ae81ff">100</span><span style="color: #f92672">;</span>
+<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">rbus</span><span style="color: #f92672">=</span><span style="color: #ae81ff">128</span><span style="color: #f92672">;</span>
+<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">gbus</span><span style="color: #f92672">=</span><span style="color: #ae81ff">0</span><span style="color: #f92672">;</span>
+<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">bbus</span><span style="color: #f92672">=</span><span style="color: #ae81ff">0</span><span style="color: #f92672">;</span>
+<span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span> <span style="color: #f92672">()</span> <span style="color: #f92672">{</span>
+<span style="color: #f8f8f2">size</span> <span style="color: #f92672">(</span><span style="color: #ae81ff">1000</span><span style="color: #f92672">,</span> <span style="color: #ae81ff">900</span><span style="color: #f92672">);</span>
+<span style="color: #f8f8f2">background</span> <span style="color: #f92672">(</span><span style="color: #ae81ff">255</span><span style="color: #f92672">,</span><span style="color: #ae81ff">255</span><span style="color: #f92672">,</span><span style="color: #ae81ff">255</span><span style="color: #f92672">);</span>
+<span style="color: #f92672">}</span>
+<span style="color: #66d9ef">void</span> <span style="color: #a6e22e">draw</span> <span style="color: #f92672">()</span> <span style="color: #f92672">{</span>
+  <span style="color: #f8f8f2">fill</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">rbus</span><span style="color: #f92672">,</span><span style="color: #f8f8f2">gbus</span><span style="color: #f92672">,</span><span style="color: #f8f8f2">bbus</span><span style="color: #f92672">);</span>
+  <span style="color: #f8f8f2">noStroke</span><span style="color: #f92672">();</span>
+  <span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">mousePressed</span><span style="color: #f92672">){</span>
+    <span style="color: #f8f8f2">circle</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">mouseX</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">mouseY</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">bus</span><span style="color: #f92672">);</span>
+  <span style="color: #f92672">}</span>
+  <span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span> <span style="color: #f8f8f2">keyPressed</span><span style="color: #f92672">){</span>   
+    <span style="color: #66d9ef">if</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">key</span><span style="color: #f92672">==</span><span style="color: #e6db74">&#39;s&#39;</span><span style="color: #f92672">){</span>
+      <span style="color: #66d9ef">if</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">bus</span><span style="color: #f92672">&gt;</span><span style="color: #ae81ff">0</span><span style="color: #f92672">){</span>
+        <span style="color: #f8f8f2">bus</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">bus</span><span style="color: #f92672">-</span><span style="color: #ae81ff">10</span><span style="color: #f92672">;</span>
+      <span style="color: #f92672">}</span>
+    <span style="color: #f92672">}</span>
+    <span style="color: #66d9ef">if</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">key</span><span style="color: #f92672">==</span><span style="color: #e6db74">&#39;m&#39;</span><span style="color: #f92672">){</span>
+      <span style="color: #f8f8f2">bus</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">bus</span><span style="color: #f92672">+</span><span style="color: #ae81ff">10</span><span style="color: #f92672">;</span>
+    <span style="color: #f92672">}</span>
+    <span style="color: #66d9ef">if</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">key</span><span style="color: #f92672">==</span><span style="color: #e6db74">&#39;b&#39;</span><span style="color: #f92672">){</span>
+      <span style="color: #f8f8f2">background</span> <span style="color: #f92672">(</span><span style="color: #ae81ff">255</span><span style="color: #f92672">,</span><span style="color: #ae81ff">255</span><span style="color: #f92672">,</span><span style="color: #ae81ff">255</span><span style="color: #f92672">);</span>
+    <span style="color: #f92672">}</span>
+    <span style="color: #66d9ef">if</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">key</span><span style="color: #f92672">==</span><span style="color: #e6db74">&#39;r&#39;</span><span style="color: #f92672">){</span>
+      <span style="color: #f8f8f2">rbus</span><span style="color: #f92672">=</span><span style="color: #ae81ff">255</span><span style="color: #f92672">;</span>
+      <span style="color: #f8f8f2">gbus</span><span style="color: #f92672">=</span><span style="color: #ae81ff">0</span><span style="color: #f92672">;</span>
+      <span style="color: #f8f8f2">bbus</span><span style="color: #f92672">=</span><span style="color: #ae81ff">0</span><span style="color: #f92672">;</span>
+    <span style="color: #f92672">}</span>
+    <span style="color: #66d9ef">if</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">key</span><span style="color: #f92672">==</span><span style="color: #e6db74">&#39;w&#39;</span><span style="color: #f92672">){</span>
+      <span style="color: #f8f8f2">rbus</span><span style="color: #f92672">=</span><span style="color: #ae81ff">255</span><span style="color: #f92672">;</span>
+      <span style="color: #f8f8f2">gbus</span><span style="color: #f92672">=</span><span style="color: #ae81ff">255</span><span style="color: #f92672">;</span>
+      <span style="color: #f8f8f2">bbus</span><span style="color: #f92672">=</span><span style="color: #ae81ff">255</span><span style="color: #f92672">;</span>
+    <span style="color: #f92672">}</span>
+    <span style="color: #66d9ef">if</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">key</span><span style="color: #f92672">==</span><span style="color: #e6db74">&#39;v&#39;</span><span style="color: #f92672">){</span>
+    <span style="color: #f8f8f2">rbus</span><span style="color: #f92672">=</span><span style="color: #ae81ff">128</span><span style="color: #f92672">;</span>
+    <span style="color: #f8f8f2">gbus</span><span style="color: #f92672">=</span><span style="color: #ae81ff">0</span><span style="color: #f92672">;</span>
+    <span style="color: #f8f8f2">bbus</span><span style="color: #f92672">=</span><span style="color: #ae81ff">0</span><span style="color: #f92672">;</span>
+    
+    <span style="color: #f92672">}</span>
+  <span style="color: #66d9ef">if</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">key</span><span style="color: #f92672">==</span><span style="color: #e6db74">&#39;n&#39;</span><span style="color: #f92672">){</span>
+  <span style="color: #f8f8f2">rbus</span><span style="color: #f92672">=</span><span style="color: #ae81ff">0</span><span style="color: #f92672">;</span>
+  <span style="color: #f8f8f2">gbus</span><span style="color: #f92672">=</span><span style="color: #ae81ff">0</span><span style="color: #f92672">;</span>
+  <span style="color: #f8f8f2">bbus</span><span style="color: #f92672">=</span><span style="color: #ae81ff">0</span><span style="color: #f92672">;</span>
+  
+  <span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span>
+ 
+<span style="color: #f92672">}</span>
 </pre></div>
+
 
                         </div>
                         <div id="code2" class="section">
